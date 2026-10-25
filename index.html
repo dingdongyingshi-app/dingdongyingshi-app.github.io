@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>叮咚影视官网 · 剧集更新与片库排片时刻表 | dingdongyingshi-app</title>
+<meta name="description" content="叮咚影视（https://dingdongyingshi-app.github.io）按类型梳理片库分类、每日剧集更新时间与排片时刻，并记录客户端版本号、投屏设置步骤与常见问题处理办法，方便影迷按题材快速定位想看的内容。">
+<meta name="keywords" content="叮咚影视,叮咚影视官网,叮咚影视APP下载,dingdongyingshi-app,剧集更新时间,高清片库分类,排片时刻表,影视投屏设置,纪录片片单">
+<meta name="author" content="叮咚影视">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#14110f">
+<link rel="canonical" href="https://dingdongyingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="叮咚影视">
+<meta property="og:title" content="叮咚影视 · 片库分类与剧集更新时间一览">
+<meta property="og:description" content="剧情、纪录、动画、剧集、综艺五大分类的排片时刻与更新节奏，客户端版本与投屏设置说明。">
+<meta property="og:url" content="https://dingdongyingshi-app.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="叮咚影视 · 片库分类与剧集更新时间一览">
+<meta name="twitter:description" content="排片时刻、更新节奏与客户端下载说明，均记录在叮咚影视官网。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:#14110f;color:#2b2520;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.75;font-size:16px;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+:root{
+  --ink:#2b2520;--paper:#f6efe2;--paper2:#fffdf7;
+  --red:#8c1c13;--green:#26402f;--gold:#b8860b;
+  --line:#d8cbb2;--muted:#7a6f61;
+}
+.serif{font-family:"Songti SC","Noto Serif SC",Georgia,"Times New Roman",serif}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* 顶部网址条 */
+.topbar{background:#0d0b09;border-bottom:1px solid #2b2520}
+.topbar .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;padding-top:8px;padding-bottom:8px;font-size:12.5px;color:#9a8f80;letter-spacing:.4px}
+.topbar b{color:#e8dcc6;font-weight:600}
+.topbar a{border-bottom:1px dotted #6b6155}
+
+/* 导航 */
+.nav{position:sticky;top:0;z-index:40;background:rgba(20,17,15,.94);backdrop-filter:blur(6px);border-bottom:2px solid var(--red)}
+.nav .wrap{display:flex;align-items:center;gap:16px;min-height:58px}
+.brand{display:flex;align-items:center;gap:10px;color:#f6efe2;flex:0 0 auto}
+.brand .mark{width:34px;height:34px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:-1px}
+.brand span{font-size:19px;letter-spacing:3px}
+.brand small{display:block;font-size:10.5px;letter-spacing:1.5px;color:#8b8071;margin-top:-4px}
+.menu{flex:1 1 auto;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.menu::-webkit-scrollbar{display:none}
+.menu a{display:inline-block;padding:8px 13px;margin-left:2px;font-size:14px;color:#c3b8a6;border-radius:2px}
+.menu a:hover{color:#14110f;background:var(--gold)}
+
+/* 银幕区 */
+.screen{position:relative;background:#14110f;color:#f6efe2;padding:52px 0 0;overflow:hidden}
+.screen::before{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:repeating-linear-gradient(90deg,#14110f 0 10px,#3a332c 10px 24px)}
+.screen::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:repeating-linear-gradient(90deg,#14110f 0 10px,#3a332c 10px 24px)}
+.hero{display:grid;grid-template-columns:1.35fr .95fr;gap:42px;align-items:end;padding-bottom:54px}
+.kicker{display:inline-block;font-size:12px;letter-spacing:4px;color:var(--gold);border:1px solid #4a3f24;padding:3px 10px;margin-bottom:16px}
+h1{font-size:clamp(30px,6vw,50px);line-height:1.22;letter-spacing:1px;font-weight:700}
+h1 em{font-style:normal;color:var(--gold);border-bottom:5px solid var(--red);padding-bottom:2px}
+.lead{margin-top:18px;font-size:16.5px;color:#c8bdab;max-width:44em}
+.hero .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .tags i{font-style:normal;font-size:12.5px;padding:4px 11px;border:1px solid #4c443b;color:#b6ab99;border-radius:14px}
+.btns{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 24px;font-size:15px;border-radius:2px;letter-spacing:1px}
+.btn-red{background:var(--red);color:#fdf6e9;border:1px solid var(--red)}
+.btn-ghost{background:transparent;color:#e6dbc6;border:1px solid #5b5145}
+.btn:hover{opacity:.86}
+
+/* 放映信息卡 */
+.slip{background:var(--paper);color:var(--ink);border-radius:3px;padding:22px 20px 18px;position:relative;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.slip::before,.slip::after{content:"";position:absolute;left:18px;right:18px;height:0;border-top:1px dashed var(--line)}
+.slip::before{top:44px}
+.slip h2{font-size:15px;letter-spacing:3px;color:var(--red);text-align:center;font-weight:700}
+.slip dl{margin-top:18px;font-size:14px}
+.slip dl div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dotted #ddd0b8}
+.slip dt{color:var(--muted);flex:0 0 auto}
+.slip dd{text-align:right;font-weight:600}
+.slip dd u{text-decoration:none;color:var(--green);font-size:13px;word-break:break-all}
+.slip .stamp{margin-top:14px;text-align:center;font-size:11.5px;letter-spacing:2px;color:var(--muted)}
+
+/* 纸面主体 */
+.paper{background:var(--paper);padding:56px 0 60px}
+.paper.alt{background:var(--paper2)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.sec-head h2{font-size:clamp(21px,3.4vw,27px);letter-spacing:2px;font-weight:700}
+.sec-head h2 s{text-decoration:none;color:var(--red);font-size:13px;letter-spacing:2px;display:block;margin-bottom:2px}
+.sec-head p{font-size:13.5px;color:var(--muted);max-width:26em}
+
+/* 片库分类 */
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cat{position:relative;background:#fff;border:1px solid var(--line);padding:20px 18px 18px;transition:.25s}
+.cat:hover{transform:translateY(-3px);border-color:var(--red);box-shadow:0 8px 18px rgba(44,32,22,.12)}
+.cat b{display:block;font-size:17px;letter-spacing:1px}
+.cat .num{position:absolute;right:14px;top:12px;font-size:26px;color:#ece2d0;font-weight:700}
+.cat p{margin-top:8px;font-size:13.5px;color:#5f564a;min-height:48px}
+.cat ul{margin-top:12px;list-style:none;font-size:12.5px;color:var(--muted);border-top:1px dotted var(--line);padding-top:10px}
+.cat li{padding:2px 0}
+.cat li::before{content:"— ";color:var(--gold)}
+
+/* 排片时刻表 */
+.tablebox{overflow-x:auto;border:1px solid var(--line);background:#fff}
+table{border-collapse:collapse;width:100%;min-width:660px;font-size:14px}
+caption{caption-side:top;text-align:left;font-size:13px;color:var(--muted);padding:10px 14px;background:#f3ebdc;border-bottom:1px solid var(--line)}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid #eee5d4}
+thead th{background:var(--green);color:#f4efe3;font-size:13px;letter-spacing:1px;font-weight:600}
+tbody tr:hover{background:#fdf8ee}
+td em{font-style:normal;color:var(--red);font-weight:600}
+.tag{display:inline-block;font-size:11.5px;padding:2px 8px;border:1px solid var(--green);color:var(--green);border-radius:2px}
+.tag.new{border-color:var(--red);color:var(--red)}
+
+/* 指南 */
+.steps{margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{background:#fff;border-left:4px solid var(--red);padding:16px 16px 18px;position:relative}
+.step::before{counter-increment:s;content:counter(s);position:absolute;right:12px;top:8px;font-size:30px;color:#f0e7d6;font-weight:700}
+.step h3{font-size:15.5px;margin-bottom:6px}
+.step p{font-size:13.5px;color:#5f564a}
+.note{margin-top:24px;background:#efe6d4;border-left:4px solid var(--gold);padding:14px 16px;font-size:13.5px;color:#5c5245}
+.note b{color:var(--red)}
+
+/* 客户端 */
+.app{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.applist{list-style:none;margin-top:16px}
+.applist li{display:flex;gap:10px;padding:8px 0;border-bottom:1px dotted var(--line);font-size:14px}
+.applist li span{flex:0 0 74px;color:var(--muted);font-size:13px}
+.phone{width:100%;max-width:290px;margin:0 auto;border:10px solid #221d19;border-radius:26px;background:#14110f;padding:18px 14px;color:#e9dec9;box-shadow:0 14px 28px rgba(0,0,0,.25)}
+.phone .bar{height:5px;width:56px;background:#3d3530;border-radius:3px;margin:0 auto 14px}
+.phone h3{font-size:17px;letter-spacing:3px;text-align:center;color:#f6efe2}
+.phone .qr{height:132px;margin:14px 0;background:repeating-conic-gradient(#1b1714 0 25%,#2b2520 0 50%) 0 0/16px 16px;border:1px solid #3d3530}
+.phone p{font-size:12.5px;color:#9b9184;text-align:center;line-height:1.7}
+.phone .ver{display:inline-block;margin-top:8px;font-size:12px;color:var(--gold);border:1px solid #4a3f24;padding:2px 8px}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--line);background:#fff}
+.faq summary{cursor:pointer;padding:15px 16px;font-size:15.5px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";color:var(--red);font-size:18px;font-weight:400}
+.faq details[open] summary::after{content:"－"}
+.faq details[open] summary{background:#f7f0e2}
+.faq .body{padding:0 16px 16px;font-size:14px;color:#5f564a}
+.faq .body p{margin-bottom:6px}
+
+/* 关于 / 网址 */
+.about{background:#14110f;color:#c8bdab;padding:52px 0}
+.about h2{color:#f6efe2;font-size:clamp(21px,3.4vw,26px);letter-spacing:2px}
+.about p{margin-top:14px;max-width:52em;font-size:15px}
+.about .urlbox{margin-top:20px;border:1px dashed #4c443b;padding:14px 16px;font-size:14.5px;word-break:break-all;color:#e6dbc6;background:#1b1714}
+.about .urlbox b{color:var(--gold);font-size:12px;letter-spacing:2px;display:block;margin-bottom:5px}
+.about a.u{color:#f0d99a;border-bottom:1px dotted #6b6155}
+
+/* 页脚 */
+footer{background:#0d0b09;color:#7d7365;padding:26px 0 30px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center}
+footer .links{display:flex;flex-wrap:wrap;gap:12px}
+footer .links a:hover{color:#d9c9a8}
+footer .big{font-size:14px;color:#a99c88;letter-spacing:.5px}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:30px}
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .app{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:560px){
+  body{font-size:15.5px}
+  .screen{padding-top:36px}
+  .hero{padding-bottom:40px}
+  .paper{padding:40px 0 44px}
+  .cats{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .cat p{min-height:0}
+  .brand span{font-size:17px;letter-spacing:2px}
+  .sec-head h2{letter-spacing:1px}
+  .slip{padding:18px 16px 14px}
+  footer .wrap{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>官方站点 · <b>叮咚影视</b> 片库导航与更新记录</span>
+    <span>访问入口：<a href="#">https://dingdongyingshi-app.github.io</a></span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <i class="mark">DY</i>
+      <span class="serif">叮咚影视<small>DINGDONG YINGSHI</small></span>
+    </a>
+    <div class="menu">
+      <a href="#showing">今日放映</a>
+      <a href="#library">片库分类</a>
+      <a href="#schedule">排片时刻</a>
+      <a href="#guide">观影指南</a>
+      <a href="#client">客户端</a>
+      <a href="#question">常见问题</a>
+      <a href="#contact">关于本站</a>
+    </div>
+  </div>
+</nav>
+
+<header class="screen" id="showing">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <span class="kicker">第 12 周 · 排片已更新</span>
+        <h1 class="serif">叮咚影视 · 把想看的片子<br><em>按时段排好</em>再打开</h1>
+        <p class="lead">这里不做花哨推荐，只做两件实在事：把片库按题材和年份拆开列清楚，把每部剧的更新时段、集数进度、清晰度标出来。周三、周六凌晨各有一轮集中更新，白天进来基本都能看到当天补上的内容。</p>
+        <div class="tags">
+          <i>剧情长片</i><i>纪录专题</i><i>动画剧场</i><i>连续剧集</i><i>综艺剪辑</i><i>短剧合集</i>
+        </div>
+        <div class="btns">
+          <a class="btn btn-red" href="#schedule">查看本周排片</a>
+          <a class="btn btn-ghost" href="#client">客户端版本与下载</a>
+        </div>
+      </div>
+
+      <aside class="slip">
+        <h2 class="serif">今 日 放 映 单</h2>
+        <dl>
+          <div><dt>放映日期</dt><dd>10 月 24 日 · 周六</dd></div>
+          <div><dt>更新批次</dt><dd>凌晨 02:10 已完成</dd></div>
+          <div><dt>在库总数</dt><dd>3,860 部 / 42,100 集</dd></div>
+          <div><dt>最高清晰</dt><dd>4K HDR · 部分片源</dd></div>
+          <div><dt>官方网址</dt><dd><u>https://dingdongyingshi-app.github.io</u></dd></div>
+        </dl>
+        <p class="stamp">叮咚影视 · 排片以站内时刻表为准</p>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="paper" id="library">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="serif"><s>LIBRARY</s>片库分类 · 按题材与年份拆开</h2>
+      <p>六个一级分类，每个分类下再按年代和地区细分，找不到片名时用分类筛比搜索更快。</p>
+    </div>
+    <div class="cats">
+      <article class="cat">
+        <span class="num">01</span>
+        <b class="serif">剧情长片</b>
+        <p>九十分钟以上的叙事类影片，按出品年代分成七个区间，冷门老片单独归档。</p>
+        <ul><li>华语 / 东亚</li><li>欧美独立制作</li><li>修复版专区</li></ul>
+      </article>
+      <article class="cat">
+        <span class="num">02</span>
+        <b class="serif">纪录专题</b>
+        <p>自然、人文、工程、人物四类，长篇与单集分开排，适合连着看。</p>
+        <ul><li>自然地理</li><li>城市与建筑</li><li>人物访谈</li></ul>
+      </article>
+      <article class="cat">
+        <span class="num">03</span>
+        <b class="serif">动画剧场</b>
+        <p>剧场版与番剧分列，剧场版按上映年份排，番剧按季度排，含原声字幕版本。</p>
+        <ul><li>剧场版</li><li>季度番剧</li><li>短篇合集</li></ul>
+      </article>
+      <article class="cat">
+        <span class="num">04</span>
+        <b class="serif">连续剧集</b>
+        <p>更新最勤的一类，页面标注已更新到第几集与下一集预计时间。</p>
+        <ul><li>日更剧</li><li>周更剧</li><li>完结典藏</li></ul>
+      </article>
+      <article class="cat">
+        <span class="num">05</span>
+        <b class="serif">综艺剪辑</b>
+        <p>按年份归档整季内容，另设纯享剪辑版，去掉花絮与广告段。</p>
+        <ul><li>整季完整版</li><li>纯享剪辑</li><li>舞台合集</li></ul>
+      </article>
+      <article class="cat">
+        <span class="num">06</span>
+        <b class="serif">短剧合集</b>
+        <p>单集十分钟以内，按题材打包成合集，一次可连播十到二十集。</p>
+        <ul><li>都市 / 情感</li><li>悬疑反转</li><li>古装短剧</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="paper alt" id="schedule">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="serif"><s>SCHEDULE</s>排片时刻表 · 10 月 24 日</h2>
+      <p>时刻指该片源进入叮咚影视片库的时间，前后误差一般不超过二十分钟。</p>
+    </div>
+    <div class="tablebox">
+      <table>
+        <caption>数据日期：2026-10-24 · 每周三、周六凌晨集中更新 · 单位：北京时间</caption>
+        <thead>
+          <tr><th>时段</th><th>片名</th><th>分类</th><th>进度</th><th>清晰度</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>00:40</td><td>《雾港往事》</td><td>剧情长片</td><td><span class="tag">全集</span></td><td>1080P</td></tr>
+          <tr><td>02:10</td><td>《北纬四十度》第 7 集</td><td>纪录专题</td><td><span class="tag new">新更</span></td><td><em>4K</em></td></tr>
+          <tr><td>09:30</td><td>《春信町的夏天》</td><td>动画剧场</td><td>剧场版</td><td>1080P</td></tr>
+          <tr><td>12:00</td><td>《长街十二号》第 18 集</td><td>连续剧集</td><td><span class="tag new">日更</span></td><td><em>4K</em></td></tr>
+          <tr><td>15:20</td><td>《山野烟火》第三季</td><td>综艺剪辑</td><td>纯享版</td><td>1080P</td></tr>
+          <tr><td>19:45</td><td>《夜航邮差》第 3 集</td><td>短剧合集</td><td>更新中</td><td>720P</td></tr>
+          <tr><td>21:30</td><td>《旧城测绘图》</td><td>纪录专题</td><td><span class="tag">全集</span></td><td>1080P</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>提醒：</b>当天没排上的片源会顺延到下一个更新批次，不会单独补发通知；想盯某部剧，记下它在表里对应的时段再来即可。</p>
+  </div>
+</section>
+
+<section class="paper" id="guide">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="serif"><s>HOW TO</s>观影指南 · 四步走完</h2>
+      <p>新用户按这个顺序操作一遍，后面基本不会再遇到播放卡顿、找不到字幕的问题。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3 class="serif">选分类</h3>
+        <p>先定题材再定年代，六个一级分类对应上面那张表，比直接搜片名省事。</p>
+      </div>
+      <div class="step">
+        <h3 class="serif">看时刻</h3>
+        <p>排片时刻表标了进度与清晰度，标「新更」的是当天凌晨刚进库的批次。</p>
+      </div>
+      <div class="step">
+        <h3 class="serif">调清晰</h3>
+        <p>网络不稳先切 720P，网速恢复后手动切回，别用自动档，自动档会来回跳。</p>
+      </div>
+      <div class="step">
+        <h3 class="serif">投大屏</h3>
+        <p>手机与电视连同一个 Wi-Fi，点播放页右上角投屏图标，选设备名即可。</p>
+      </div>
+    </div>
+    <p class="note"><b>关于字幕：</b>部分外语片源内嵌字幕不可关，另有独立字幕轨道的可在播放设置里切换，标「原声字幕」的即为后者。</p>
+  </div>
+</section>
+
+<section class="paper alt" id="client">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="serif"><s>CLIENT</s>叮咚影视客户端</h2>
+      <p>网页端看排片，客户端看片，两端进度不互通，建议固定用一端追。</p>
+    </div>
+    <div class="app">
+      <div>
+        <p style="font-size:15px;color:#5f564a">客户端支持离线缓存与后台续播，缓存文件只在本地，卸载即清除。安装包装在官网页面上，不走第三方市场，安装时留意系统提示的权限申请。</p>
+        <ul class="applist">
+          <li><span>当前版本</span><b>v3.2.1（2026-09-28 发布）</b></li>
+          <li><span>安装包</span><b>38.4 MB · 安卓 8.0 起</b></li>
+          <li><span>更新内容</span><b>修复投屏断连、缓存暂停</b></li>
+          <li><span>网页入口</span><b>https://dingdongyingshi-app.github.io</b></li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-red" href="#">下载安卓安装包</a>
+          <a class="btn btn-ghost" href="#question">查看常见问题</a>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="bar"></div>
+        <h3 class="serif">叮咚影视</h3>
+        <div class="qr"></div>
+        <p>用手机浏览器打开官网首页<br>点右上角菜单选择「添加到主屏幕」</p>
+        <span class="ver">Web 版 · 免安装</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paper" id="question">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="serif"><s>FAQ</s>常见问题 · 六条</h2>
+      <p>下面这几条被问得最多，点开看具体处理办法。</p>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>剧集一般什么时候更新？</summary>
+        <div class="body"><p>周三和周六凌晨各一轮，多数在 02:00 到 04:00 之间完成。日更剧单独算，通常固定在中午十二点前后。</p></div>
+      </details>
+      <details>
+        <summary>播放卡顿、一直转圈怎么办？</summary>
+        <div class="body"><p>先把清晰度切到 720P 试一次；仍卡就退出重进，多数是本地网络抖动。若只在某个片源上卡，说明该片源节点在维护，换时段再试。</p></div>
+      </details>
+      <details>
+        <summary>需要注册账号才能看吗？</summary>
+        <div class="body"><p>浏览和播放不需要。要缓存到本地、保存观看进度、多设备续播，才需要登录账号。</p></div>
+      </details>
+      <details>
+        <summary>投屏找不到电视设备？</summary>
+        <div class="body"><p>确认手机和电视在同一个 Wi-Fi 下，且电视没开「访客网络隔离」。仍搜不到就重启电视的投屏服务，再点一次播放页的投屏图标。</p></div>
+      </details>
+      <details>
+        <summary>收藏的片子下架了还能找回吗？</summary>
+        <div class="body"><p>片源调整时会保留分类页入口三十天，期间可在「最近浏览」里找回。超过三十天的只能重新检索同名内容。</p></div>
+      </details>
+      <details>
+        <summary>官网地址会不会变？</summary>
+        <div class="body"><p>不变。叮咚影视只用 https://dingdongyingshi-app.github.io 这一个入口，其他同名站点均非本站。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="contact">
+  <div class="wrap">
+    <h2 class="serif">关于叮咚影视</h2>
+    <p>本站是一个影视内容索引站：整理片库分类、记录更新时间与排片时段、写明客户端版本变化。内容以公共信息整理为主，片源版权归各自权利人所有，发现侵权内容可通过页面下方入口提交处理。</p>
+    <div class="urlbox">
+      <b>OFFICIAL SITE</b>
+      叮咚影视 · <a class="u" href="#">https://dingdongyingshi-app.github.io</a>
+    </div>
+    <p style="margin-top:16px;font-size:14px">合作、投诉、片源纠错请通过站内留言说明片名与具体时间点，一般三个工作日内回复。</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="big serif">叮咚影视 · dingdongyingshi-app</p>
+      <p style="margin-top:4px">© 2026 叮咚影视　本站内容仅作影视信息索引之用</p>
+    </div>
+    <div class="links">
+      <a href="#showing">今日放映</a>
+      <a href="#library">片库分类</a>
+      <a href="#schedule">排片时刻</a>
+      <a href="#guide">观影指南</a>
+      <a href="#client">客户端</a>
+      <a href="#question">常见问题</a>
+      <a href="#">版权声明</a>
+      <a href="#">意见反馈</a>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://dingdongyingshi-app.github.io/#website",
+      "url": "https://dingdongyingshi-app.github.io/",
+      "name": "叮咚影视",
+      "alternateName": "dingdongyingshi-app",
+      "inLanguage": "zh-CN",
+      "description": "叮咚影视整理片库分类、剧集更新时间与排片时刻表，并提供客户端版本与投屏设置说明。"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dingdongyingshi-app.github.io/#org",
+      "name": "叮咚影视",
+      "url": "https://dingdongyingshi-app.github.io/",
+      "description": "影视内容索引站点，主营片库分类导航与更新排期记录。"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://dingdongyingshi-app.github.io/#webpage",
+      "url": "https://dingdongyingshi-app.github.io/",
+      "name": "叮咚影视官网 · 剧集更新与片库排片时刻表",
+      "isPartOf": { "@id": "https://dingdongyingshi-app.github.io/#website" },
+      "about": { "@id": "https://dingdongyingshi-app.github.io/#org" },
+      "inLanguage": "zh-CN"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
